@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             height: 100vh;
             margin: 0;
             background-color: #f0f0f0;
@@ -54,7 +54,10 @@
                 break;
         }
 
+        messageElement.textContext += '<br>(This window may be safely closed)'
+        
         // Wait 5 seconds then close the tab
+        // This doesn't actually do anything because javascript may only close windows that the script opened
         setTimeout(function() {
             window.close();
         }, 5000);
