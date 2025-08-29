@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steam Game Launcher</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .message {
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="message" class="message"></div>
+    <script>
+        // Function to get URL parameter
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            const results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Get the 'game' parameter from URL
+        const gameParam = getUrlParameter('game').toLowerCase();
+        const messageElement = document.getElementById('message');
+        
+        // Switch statement to handle different games
+        switch(gameParam) {
+            case 'dbd':
+                // Dead by Daylight - Steam ID 381210
+                messageElement.textContent = 'Launching Dead by Daylight...';
+                window.location.href = 'steam://rungameid/381210';
+                break;
+            case 'df':
+                // Delta Force - Steam ID 2507950
+                messageElement.textContent = 'Launching Delta Force...';
+                window.location.href = 'steam://rungameid/2507950';
+                break;
+            default:
+                messageElement.textContent = 'No valid game parameter found or game not recognized';
+                console.log('No valid game parameter found or game not recognized');
+                break;
+        }
+
+        // Wait 5 seconds then close the tab
+        setTimeout(function() {
+            window.close();
+        }, 5000);
+    </script>
+</body>
+</html>
