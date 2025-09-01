@@ -48,6 +48,11 @@
                 messageElement.textContent = 'Launching Delta Force...';
                 window.location.href = 'steam://rungameid/2507950';
                 break;
+            case 'mr':
+                // Marvel Rivals - Steam ID 2767030
+                messageElement.textContent = 'Launching Marvel Rivals...';
+                window.location.href = 'steam://rungameid/2767030';
+                break;
             case 'ror2':
                 // Risk of Rain 2 - Steam ID 632360
                 messageElement.textContent = 'Launching Risk of Rain 2...';
@@ -60,7 +65,7 @@
         }
 
         // Wait 5 seconds then close the tab
-        // This doesn't actually do anything because javascript may only close windows that the script opened
+        // This shouldn't actually do anything because javascript may only close windows that the script opened - though somehow it seems to work anyway?
         setTimeout(function() {
             window.close();
         }, 5000);
