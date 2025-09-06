@@ -38,6 +38,11 @@
         
         // Switch statement to handle different games
         switch(gameParam) {
+            case 'dayz':
+                // Dead by Daylight - Steam ID 221100
+                messageElement.textContent = 'Launching DayZ...';
+                window.location.href = 'steam://rungameid/221100';
+                break;
             case 'dbd':
                 // Dead by Daylight - Steam ID 381210
                 messageElement.textContent = 'Launching Dead by Daylight...';
