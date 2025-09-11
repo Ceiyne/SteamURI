@@ -38,6 +38,11 @@
         
         // Switch statement to handle different games
         switch(gameParam) {
+            case 'bl4':
+                // Borderlands 4 - Steam ID 1285190
+                messageElement.textContent = 'Launching Borderlands 4...';
+                window.location.href = 'steam://rungameid/1285190';
+                break;
             case 'dayz':
                 // DayZ - Steam ID 221100
                 messageElement.textContent = 'Launching DayZ...';
